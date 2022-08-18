@@ -7,14 +7,13 @@ import { TokenState } from '../../../store/tokens/tokensReducer';
 import Postagem from '../../../models/Postagem';
 import { busca } from '../../../services/Services';
 import { toast } from 'react-toastify';
-
 function ListaPostagem() {
   const [posts, setPosts] = useState<Postagem[]>([])
   let navigate = useNavigate();
   const token = useSelector<TokenState, TokenState["tokens"]>(
     (state) => state.tokens
   );
-  
+
 
   useEffect(() => {
     if (token == "") {
@@ -27,7 +26,7 @@ function ListaPostagem() {
         draggable: false,
         theme: 'colored',
         progress: undefined,
-       });
+      });
       navigate("/login")
 
     }
